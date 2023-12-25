@@ -6,13 +6,11 @@ public class Calculator {
     BinaryOperator<Integer> minus = (x, y) -> x - y;
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
     BinaryOperator<Integer> divide = (x, y) -> {
-        try {
-            return x / y;
-        } catch (ArithmeticException e) {
-            System.err.println(
-                    "Error! Dividing by zero");
+        if (y != 0) return x/y;
+        else {
+            System.out.println("/ by zero ");
+            return Integer.MAX_VALUE;
         }
-        return y;
     };
     UnaryOperator<Integer> pow = x -> x * x;
     UnaryOperator<Integer> abs = x -> x > 0 ? x : x * -1;

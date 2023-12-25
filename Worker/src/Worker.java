@@ -14,14 +14,4 @@ public class Worker {
             else callback.onDone("Task " + i + " is done");
         }
     }
-
-    @FunctionalInterface
-    public interface OnTaskErrorListener {
-        void onError(String result);
-    }
-
-    @FunctionalInterface
-    public interface OnTaskDoneListener {
-        void onDone(String result);
-    }
 }
